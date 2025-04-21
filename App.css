@@ -1,0 +1,76 @@
+/* App.css */
+.canvas-container {
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  overflow: hidden;
+}
+
+.curved-plane {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90vw;
+  height: 90vh;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(76, 201, 240, 0.15), rgba(0, 0, 0, 0.9));
+  border-radius: 50% / 10%;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(76, 201, 240, 0.3);
+  border: 2px solid rgba(76, 201, 240, 0.3);
+  z-index: 0;
+}
+
+.nav-buttons {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.nav-left, .nav-right {
+  pointer-events: all;
+  padding: 20px;
+  font-size: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #4cc9f0;
+  color: #4cc9f0;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+}
+
+.nav-left:hover, .nav-right:hover {
+  background: rgba(76, 201, 240, 0.2);
+  transform: scale(1.2);
+}
+
+.designation-header {
+  background: rgba(0, 0, 0, 0.9);
+  color: #4cc9f0;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 0.75em;
+  font-weight: 400;
+  border: 2px solid #4cc9f0;
+  box-shadow: 0 0 25px rgba(76, 201, 240, 0.4);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.name-tooltip {
+  background: white;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.8em;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
