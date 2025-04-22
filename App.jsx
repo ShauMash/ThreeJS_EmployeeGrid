@@ -5,6 +5,7 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 import './App.css';
 
+//Dummy list of employees
 const employees = [
   { name: 'Alice Johnson', designation: 'Frontend Developer', img: 'emp1.jpg', linkedin: 'https://linkedin.com/in/alicejohnson' },
   { name: 'David Kim', designation: 'Frontend Developer', img: 'emp4.jpg', linkedin: 'https://linkedin.com/in/davidkim' },
@@ -102,7 +103,7 @@ function CurvedGrid({ groups, vOffset }) {
                   onPointerUp={e => { e.stopPropagation(); window.open(emp.linkedin, '_blank'); }}>
                   <mesh>
                     <planeGeometry args={[planeW + 0.4, planeH + 0.4]} />
-                    <meshBasicMaterial color="#4cc9f0" />
+                    <meshBasicMaterial color="#F47C20" />
                   </mesh>
                   <mesh position={[0, 0, 0.1]}> 
                     <planeGeometry args={[planeW, planeH]} />
