@@ -5,7 +5,7 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 import './App.css';
 
-//Dummy list of employees
+// Dummy list of employees
 const employees = [
   { name: 'Alice Johnson', designation: 'Frontend Developer', img: 'emp1.jpg', linkedin: 'https://linkedin.com/in/alicejohnson' },
   { name: 'David Kim', designation: 'Frontend Developer', img: 'emp4.jpg', linkedin: 'https://linkedin.com/in/davidkim' },
@@ -57,7 +57,7 @@ function CameraControls() {
   return null;
 }
 
-function CurvedGrid({ group }) {
+function CurvedGrid({ group, verticalOffset }) {
   const curveAngle = Math.PI / 6;
   const radius = 45;
   const planeW = 6, planeH = 8;
@@ -71,7 +71,7 @@ function CurvedGrid({ group }) {
   const rows = Math.ceil(total / gridCols);
 
   return (
-    <group>
+    <group position={[0, verticalOffset, 0]}>
       {emps.map((emp, index) => {
         const row = Math.floor(index / gridCols);
         const col = index % gridCols;
@@ -79,7 +79,6 @@ function CurvedGrid({ group }) {
         const xOffset = (col - (gridCols - 1) / 2) * colGap;
         const yOffset = -row * rowGap;
 
-        // For 1 employee: center it
         let x = 0;
         if (total === 1) {
           x = 0;
@@ -87,7 +86,6 @@ function CurvedGrid({ group }) {
           x = xOffset;
         }
 
-        // Calculate rotation to curve around the center
         const theta = Math.asin(x / radius);
         const z = radius - radius * Math.cos(theta);
         const y = yOffset;
@@ -121,7 +119,6 @@ function CurvedGrid({ group }) {
         );
       })}
 
-      {/* Designation heading stays fixed relative to first image row */}
       <Html position={[0, rowGap * (rows / 2 + 0.3), 0]}>
         <div className="designation-header small">{group.designation}</div>
       </Html>
@@ -129,9 +126,9 @@ function CurvedGrid({ group }) {
   );
 }
 
-
 export default function App() {
   const [index, setIndex] = useState(0);
+  const [verticalOffset, setVerticalOffset] = useState(0); // 🆕 Added state
 
   const groups = useMemo(() => {
     const map = {};
@@ -162,13 +159,22 @@ export default function App() {
           <CameraControls />
           <ambientLight intensity={1.2} />
           <pointLight position={[10, 10, 10]} intensity={0.6} />
-          <CurvedGrid group={groups[index]} />
+          <CurvedGrid group={groups[index]} verticalOffset={verticalOffset} />
         </Canvas>
       </div>
       <div className="nav-buttons">
         <button className="nav-left" onClick={() => scrollDesignation(-1)}>←</button>
         <button className="nav-right" onClick={() => scrollDesignation(1)}>→</button>
       </div>
+      <button
+        className="nav-up"
+        onClick={() => setVerticalOffset(prev => prev + 5)} // Adjust step size if needed
+      >↑</button>
+
+      <button
+        className="nav-down"
+        onClick={() => setVerticalOffset(prev => prev - 5)} // Adjust step size if needed
+      >↓</button>
     </div>
   );
 }
