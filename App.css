@@ -13,8 +13,8 @@ body, html, #root {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 90vw;
-  height: 90vh;
+  width: 70vw;
+  height: 70vh;
   transform: translate(-50%, -50%);
   background: radial-gradient(ellipse at center, rgba(248, 248, 248, 0), rgba(140, 132, 132, 0.9));
   border-radius: 50% / 10%;
@@ -32,14 +32,14 @@ body, html, #root {
   display: flex;
   justify-content: space-between;
   pointer-events: none;
-  z-index: 1000;
-  padding: 0 20px;
+  z-index: 500;
+  padding: 0 5px;
 }
 
 .nav-left, .nav-right {
   pointer-events: all;
   padding: 20px;
-  font-size: 40px;
+  font-size: 30px;
   background: #002D72;
   border: 2px solid #F47C20;
   color: #F47C20;
@@ -54,14 +54,14 @@ body, html, #root {
   transform: scale(1.2);
 }
 
-.designation-header {
+.designation-header{
   background: #002D72;
   color: white;
   padding: 7px 15px;
-  border-radius: 8px;
-  font-size: 0.75em;
-  font-weight: 400;
-  border: 2px solid #F47C20;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: 2.5px solid #F47C20;
   box-shadow: 0 0 25px rgba(76, 201, 240, 0.4);
   text-transform: uppercase;
   white-space: nowrap;
