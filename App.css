@@ -32,14 +32,38 @@ body, html, #root {
   display: flex;
   justify-content: space-between;
   pointer-events: none;
-  z-index: 500;
+  z-index: 1000;
   padding: 0 5px;
 }
 
+.nav-up,.nav-down {
+  position: absolute;
+  left: 750px;
+  font-size: 30px;
+  padding: 15px;
+  border-radius: 2px;
+  background-color: #002D72;
+  color: #F47C20;
+  border: 2px solid #F47C20;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+}
+
+.nav-up {
+  top: 20px;
+}
+
+.nav-down {
+  bottom: 20px;
+}
+
+
 .nav-left, .nav-right {
   pointer-events: all;
-  padding: 20px;
-  font-size: 30px;
+  padding: 15px;
+  font-size: 28px;
   background: #002D72;
   border: 2px solid #F47C20;
   color: #F47C20;
