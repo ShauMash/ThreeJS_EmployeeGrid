@@ -1,8 +1,11 @@
 /* App.css */
-.canvas-container {
-  width: 100vw;
-  height: 100vh;
-  background: #000000;
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: url('public/background.jpg') no-repeat center center fixed;
+  background-size: cover;
   overflow: hidden;
 }
 
@@ -13,10 +16,10 @@
   width: 90vw;
   height: 90vh;
   transform: translate(-50%, -50%);
-  background: radial-gradient(ellipse at center, rgba(76, 201, 240, 0.15), rgba(0, 0, 0, 0.9));
+  background: radial-gradient(ellipse at center, rgba(248, 248, 248, 0), rgba(140, 132, 132, 0.9));
   border-radius: 50% / 10%;
   overflow: hidden;
-  box-shadow: 0 0 30px rgba(76, 201, 240, 0.3);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.774);
   border: 2px solid rgba(76, 201, 240, 0.3);
   z-index: 0;
 }
@@ -37,9 +40,9 @@
   pointer-events: all;
   padding: 20px;
   font-size: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid #4cc9f0;
-  color: #4cc9f0;
+  background: #002D72;
+  border: 2px solid #F47C20;
+  color: #F47C20;
   cursor: pointer;
   transition: all 0.2s;
   border-radius: 50%;
@@ -52,24 +55,26 @@
 }
 
 .designation-header {
-  background: rgba(0, 0, 0, 0.9);
-  color: #4cc9f0;
-  padding: 12px 30px;
+  background: #002D72;
+  color: white;
+  padding: 7px 15px;
   border-radius: 8px;
   font-size: 0.75em;
   font-weight: 400;
-  border: 2px solid #4cc9f0;
+  border: 2px solid #F47C20;
   box-shadow: 0 0 25px rgba(76, 201, 240, 0.4);
   text-transform: uppercase;
   white-space: nowrap;
   transform: translateX(-50%);
 }
 
+
 .name-tooltip {
   background: white;
   color: #000;
   padding: 12px 24px;
   border-radius: 8px;
+  border: solid #F47C20;
   font-size: 0.8em;
   font-weight: 700;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
